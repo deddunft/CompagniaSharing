@@ -12,9 +12,7 @@ public class Utente {
     private String cf;
     private DataNascita dataNascita;
     private boolean patente;
-    enum patenteT {
-        A1,B1,C1
-    }
+
     private patenteT tipoPatente;
     public DataNascita oggi = new DataNascita(15,03,2022);
     public boolean casco;
