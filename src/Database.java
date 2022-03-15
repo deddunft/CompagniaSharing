@@ -1,11 +1,10 @@
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class Database {
 
     public HashMap<String,Utente> utenti = new HashMap<String,Utente>();
     public HashMap<String, Veicolo> pVeicoli = new HashMap<String,Veicolo>();
+    public String idnum;
 
 
 
@@ -55,10 +54,14 @@ public class Database {
         return utenti.get(utenteid);
     }
 
-
-
-
+    public void setUtenti(String idut, Utente utente) {
+       utenti.put(idut,utente);
     }
+
+    public void setpVeicoli(HashMap<String, Veicolo> pVeicoli) {
+        this.pVeicoli = pVeicoli;
+    }
+}
 
 
 

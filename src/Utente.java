@@ -65,6 +65,33 @@ public class Utente {
         return casco;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setCf(String cf) {
+        this.cf = cf;
+    }
+
+    public void setDataNascita(DataNascita dataNascita) {
+        this.dataNascita = dataNascita;
+    }
+
+    public void setPatente(boolean patente) {
+        this.patente = patente;
+    }
+
+    public void setTipoPatente(patenteT tipoPatente) {
+        this.tipoPatente = tipoPatente;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
 
     @Override
     public String toString() {
