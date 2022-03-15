@@ -48,7 +48,12 @@ public class Database {
     }
 
 
-    public
+    public Veicolo getVeicolo(String veicoloid){
+        return pVeicoli.get(veicoloid);
+    }
+    public Utente getUtente(String utenteid){
+        return utenti.get(utenteid);
+    }
 
 
 

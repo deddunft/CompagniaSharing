@@ -6,9 +6,9 @@ public class CarSharing {
     private Database databaseU;
 
 
-    public CarSharing(){
-
-
+    public CarSharing(String vID, String uID){
+        databaseA.getVeicolo(vID);
+        databaseU.getUtente(uID);
     }
 
 
