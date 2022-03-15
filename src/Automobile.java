@@ -5,7 +5,7 @@ public class Automobile extends Veicolo {
 
 
     public Automobile( int id, String gps, int benzina, int targa) {
-        super("Au", id, gps);
+        super("Au", id, gps,0.30);
         this.rifornimento = new Rifornimento(Rifornimento.TIPO.BENZINA,benzina);
         this.targa = targa;
     }

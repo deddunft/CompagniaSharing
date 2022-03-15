@@ -7,12 +7,15 @@ public abstract class Veicolo {
     private String gps;
     enum STATO { AFF,LIB}
     public STATO stato;
+    private double prezzo;
 
 
-    public Veicolo(String idn, int id, String gps) {
+    public Veicolo(String idn, int id, String gps,double prezzo) {
         this.idn = idn;
         this.id = id;
         this.gps = gps;
+        this.prezzo=prezzo;
+
     }
 
     public STATO getStato() {
@@ -21,6 +24,10 @@ public abstract class Veicolo {
 
     public String getGps() {
         return gps;
+    }
+
+    public double getPrezzo() {
+        return prezzo;
     }
 
     @Override
