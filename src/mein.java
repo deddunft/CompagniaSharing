@@ -11,6 +11,8 @@ public class mein {
         enjoy.RegistraUtente(io);
         Database db = new Database();
         System.out.println(db.getUtenti());
-        System.out.println(enjoy.ScegliVeicolo(db.utenti.get("Ut002")));
+        System.out.println(enjoy.ScegliVeicolo(db.utenti.get("Ut004")));
+        System.out.println();
+
     }
 }

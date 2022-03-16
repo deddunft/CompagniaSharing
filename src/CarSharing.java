@@ -97,6 +97,11 @@ public class CarSharing {
 
     }
 
+    public void terminaAff(Utente utente,Veicolo veicolo){
+        databaseA.pVeicoli.get(veicolo.stato.statoa== Stato.STATO.LIB&&veicolo.stato.Utaff==null);
+        databaseA.regAff.remove(utente,veicolo);
+    }
+
 
 
 }
