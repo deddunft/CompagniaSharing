@@ -29,35 +29,46 @@ public class CarSharing {
         System.out.println(databaseA.pVeicoli);
         System.out.println("Scegli un veicolo dalla lista digitando il suo codice: ");
         Scanner inn= new Scanner(System.in);
-        String risp= inn.toString();
+        String risp= inn.next();
         Affittamelo(utente,databaseA.getVeicolo(risp));
+        if (Affittamelo(utente, databaseA.getVeicolo(risp))==false){
+            System.out.println("Non puoi scegliere questo veicolo!");
+            return null;
+
+        }
+        else
         return databaseA.getVeicolo(risp);
 
 
     }
 
-    public void Affittamelo (Utente utente, Veicolo veicolo) {
-        if (veicolo.getStato().statoa.equals(Stato.STATO.LIB)) {
+    public boolean Affittamelo (Utente utente, Veicolo veicolo) {
+        if (veicolo.getStato().statoa== Stato.STATO.LIB) {
+
 
             if (utente.getTipoPatente().isPatenta() == false && veicolo.patente.isPatenta() == false || utente.getTipoPatente().isPatenta() == true && veicolo.patente.isPatenta() == false) {
-                aff.setRegAff(veicolo, utente);
+
                 veicolo.setStato(utente);
                 databaseA.setRegAff(veicolo,utente);
+                return true;
             } else if (utente.getTipoPatente().isPatenta() == true) {
                 if (utente.getTipoPatente().getPatt() == Patente.patenteT.C1) {
                     if (veicolo.patente.getPatt() == Patente.patenteT.A1 || veicolo.patente.getPatt() == Patente.patenteT.B1 || veicolo.patente.getPatt() == Patente.patenteT.C1) {
-                        aff.setRegAff(veicolo, utente);
+
                         veicolo.setStato(utente);
                         databaseA.setRegAff(veicolo,utente);
+                        return true;
 
                     }
                 } else if (utente.getTipoPatente().getPatt() == Patente.patenteT.B1) {
                     if (veicolo.patente.getPatt() == Patente.patenteT.C1) {
                         System.out.println("Non poi Affittare questo Veicolo");
+                        return false;
                     } else {
-                        aff.setRegAff(veicolo, utente);
+
                         veicolo.setStato(utente);
                         databaseA.setRegAff(veicolo,utente);
+                        return true;
 
 
 
@@ -65,22 +76,25 @@ public class CarSharing {
 
                 } else if (utente.getTipoPatente().getPatt().equals(Patente.patenteT.A1)) {
                     if (veicolo.patente.getPatt().equals(Patente.patenteT.A1)) {
-                        aff.setRegAff(veicolo, utente);
+
                         veicolo.setStato(utente);
                         databaseA.setRegAff(veicolo,utente);
-
+                        return true;
 
                     } else {
                         System.out.println("Non poi Affittare questo Veicolo");
+                        return false;
                     }
                 }
             }
 
-
+            return true;
         }
         else {
             System.out.println("Il veicolo non è disponibile");
+            return false;
         }
+
     }
 
 

@@ -91,11 +91,9 @@ public class Utente {
 
     @Override
     public String toString() {
-        return "Utente{" +
+        return
                 "nome='" + nome + '\'' +
-                ", cf='" + cf + '\'' +
-                ", tipoPatente=" + tipoPatente +
-                ", casco=" + casco +
-                '}';
+                ", Patente=" + tipoPatente +
+                ", Casco=" + casco ;
     }
 }

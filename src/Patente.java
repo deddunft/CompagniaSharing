@@ -23,4 +23,11 @@ public class Patente {
     public boolean isPatenta() {
         return patenta;
     }
+
+    @Override
+    public String toString() {
+        if (patenta==true){
+        return "Patente " + patt ;}
+        else return "No patente";
+    }
 }

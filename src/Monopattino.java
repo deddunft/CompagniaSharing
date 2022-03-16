@@ -6,4 +6,9 @@ public class Monopattino extends Veicolo {
         super("MN", id, gps, new Stato(), 0.10, new Patente(false,null));
         this.rifornimento = new Rifornimento(Rifornimento.TIPO.ELETTRICO,100);
     }
+
+    @Override
+    public String toString() {
+        return "Monopattino" + getGps()+""+ getStato();
+    }
 }

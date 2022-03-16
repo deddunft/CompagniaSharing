@@ -47,7 +47,6 @@ public abstract class Veicolo {
     @Override
     public String toString() {
         return "Veicolo{" +
-                "id='" + idn + " "+ id +
                 ", gps='" + gps + '\'' +
                 ", stato=" + stato +
                 '}';

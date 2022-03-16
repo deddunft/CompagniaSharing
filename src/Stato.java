@@ -17,4 +17,15 @@ public class Stato {
             statoa =STATO.AFF;
         }
     }
+
+    @Override
+    public String toString() {
+        if (Utaff == null) {
+            return
+                    "stato=" + statoa;
+        } else {
+            return
+                    "Utente Aff=" + Utaff;
+        }
+    }
 }

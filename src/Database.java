@@ -4,7 +4,7 @@ public class Database {
 
     public HashMap<String,Utente> utenti = new HashMap<String,Utente>();
     public HashMap<String, Veicolo> pVeicoli = new HashMap<String,Veicolo>();
-    public HashMap<String,String> regAff;
+    public HashMap<String,String> regAff = new HashMap<String,String>();
     public String idnum;
 
 
@@ -58,6 +58,14 @@ public class Database {
         veicolo.stato.setUtaff(utente);
         String ut = utente.getCf();
         regAff.put(vei, ut);
+    }
+
+    public HashMap<String, Utente> getUtenti() {
+        return utenti;
+    }
+
+    public HashMap<String,Veicolo> getVeicoli(){
+        return pVeicoli;
     }
 
     public Veicolo getVeicolo(String veicoloid){

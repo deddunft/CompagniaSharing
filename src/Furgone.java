@@ -8,4 +8,11 @@ public class Furgone extends Veicolo{
         this.rifornimento = new Rifornimento(Rifornimento.TIPO.BENZINA,100);
         this.targa = targa;
     }
+
+    @Override
+    public String toString() {
+        return "Furgone{" +
+                "rifornimento=" + rifornimento +
+                '}';
+    }
 }
