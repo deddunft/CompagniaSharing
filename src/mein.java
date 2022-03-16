@@ -12,7 +12,9 @@ public class mein {
         Database db = new Database();
         System.out.println(db.getUtenti());
         System.out.println(enjoy.ScegliVeicolo(db.utenti.get("Ut004")));
-        System.out.println();
+        System.out.println(db.getRegAff());
+        enjoy.terminaAff(db.utenti.get("Ut004"), db.getVeicolo("Mp01"));
+        System.out.println(db.getRegAff());
 
     }
 }

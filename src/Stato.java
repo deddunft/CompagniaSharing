@@ -13,10 +13,10 @@ public class Stato {
 
     public void setUtaff(Utente utaff) {
         Utaff = utaff;
-        if (utaff!=null){
-            statoa =STATO.AFF;
-        }
+        statoa=STATO.AFF;
     }
+
+
 
     @Override
     public String toString() {

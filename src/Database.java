@@ -71,6 +71,12 @@ public class Database {
     public Veicolo getVeicolo(String veicoloid){
         return pVeicoli.get(veicoloid);
     }
+    public boolean checkVeicolo (String veicolo) {
+        if (pVeicoli.containsKey(veicolo)){
+            return true;
+        }
+        else return false;
+    }
     public Utente getUtente(String utenteid){
         return utenti.get(utenteid);
     }

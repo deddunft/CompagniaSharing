@@ -30,13 +30,14 @@ public class CarSharing {
         System.out.println("Scegli un veicolo dalla lista digitando il suo codice: ");
         Scanner inn= new Scanner(System.in);
         String risp= inn.next();
-        Affittamelo(utente,databaseA.getVeicolo(risp));
-        if (Affittamelo(utente, databaseA.getVeicolo(risp))==false){
+
+        if (databaseA.checkVeicolo(risp)==false){
             System.out.println("Non puoi scegliere questo veicolo!");
             return null;
 
         }
         else
+            Affittamelo(utente,databaseA.getVeicolo(risp));
         return databaseA.getVeicolo(risp);
 
 
