@@ -45,6 +45,10 @@ public class CarSharing {
 
     public boolean Affittamelo (Utente utente, Veicolo veicolo) {
         if (veicolo.getStato().statoa== Stato.STATO.LIB) {
+            if (veicolo instanceof Scooter && utente.isCasco()==false){
+                System.out.println("Devi avere il casco nenno!");
+                return false;
+            }
 
 
             if (utente.getTipoPatente().isPatenta() == false && veicolo.patente.isPatenta() == false || utente.getTipoPatente().isPatenta() == true && veicolo.patente.isPatenta() == false) {
