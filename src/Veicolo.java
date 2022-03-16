@@ -5,20 +5,22 @@ public abstract class Veicolo {
     private String idn;
     private int id;
     private String gps;
-    enum STATO { AFF,LIB}
-    public STATO stato;
+
+    public Stato stato;
     private double prezzo;
+    public Patente patente;
 
 
-    public Veicolo(String idn, int id, String gps,double prezzo) {
+    public Veicolo(String idn, int id, String gps, Stato stato, double prezzo, Patente patente) {
         this.idn = idn;
         this.id = id;
         this.gps = gps;
-        this.prezzo=prezzo;
-
+        this.stato = stato;
+        this.prezzo = prezzo;
+        this.patente = patente;
     }
 
-    public STATO getStato() {
+    public Stato getStato() {
         return stato;
     }
 
@@ -28,6 +30,18 @@ public abstract class Veicolo {
 
     public double getPrezzo() {
         return prezzo;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getIdn() {
+        return idn;
+    }
+
+    public void setStato(Utente utente) {
+        this.stato.setUtaff(utente);
     }
 
     @Override

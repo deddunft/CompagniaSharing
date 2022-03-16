@@ -11,18 +11,17 @@ public class Utente {
     private String nome;
     private String cf;
     private DataNascita dataNascita;
-    private boolean patente;
 
-    private patenteT tipoPatente;
+
+    private Patente tipoPatente;
     public DataNascita oggi = new DataNascita(15,03,2022);
     public boolean casco;
     private double saldo = 50;
 
-    public Utente(String nome, String cf, DataNascita dataNascita, boolean patente,patenteT tipoPatente,Boolean casco) {
+    public Utente(String nome, String cf, DataNascita dataNascita,Patente tipoPatente,Boolean casco) {
         this.nome = nome;
         this.cf = cf;
         this.dataNascita = dataNascita;
-        this.patente = patente;
         this.tipoPatente = tipoPatente;
         this.casco = casco;
     }
@@ -52,11 +51,12 @@ public class Utente {
         else return false;
     }
 
-    public patenteT getTipoPatente() {
+    public Patente getTipoPatente() {
         return tipoPatente;
     }
-    public boolean isPatente(){
-        return patente;
+
+    public void setTipoPatente(Patente tipoPatente) {
+        this.tipoPatente = tipoPatente;
     }
 
     public boolean isCasco() {
@@ -79,16 +79,14 @@ public class Utente {
         this.dataNascita = dataNascita;
     }
 
-    public void setPatente(boolean patente) {
-        this.patente = patente;
-    }
-
-    public void setTipoPatente(patenteT tipoPatente) {
-        this.tipoPatente = tipoPatente;
-    }
 
     public void setSaldo(double saldo) {
         this.saldo = saldo;
+    }
+
+
+    public String getCf() {
+        return cf;
     }
 
     @Override

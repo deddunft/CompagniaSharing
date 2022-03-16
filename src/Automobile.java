@@ -4,9 +4,9 @@ public class Automobile extends Veicolo {
     private int targa;
 
 
-    public Automobile( int id, String gps, int benzina, int targa) {
-        super("Au", id, gps,0.30);
-        this.rifornimento = new Rifornimento(Rifornimento.TIPO.BENZINA,benzina);
+    public Automobile(int id, String gps,int targa) {
+        super("AU", id, gps, new Stato(), 0.30, new Patente(true, Patente.patenteT.B1));
+        this.rifornimento = new Rifornimento(Rifornimento.TIPO.BENZINA,100);
         this.targa = targa;
     }
 }

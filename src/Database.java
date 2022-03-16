@@ -12,16 +12,16 @@ public class Database {
 
     public Database() {
 
-        Bicicletta bc1 = new Bicicletta(1, "0");
-        Bicicletta bc2 = new Bicicletta(2, "0");
-        Monopattino mp1 = new Monopattino(1, "0", 100);
-        Monopattino mp2 = new Monopattino(2, "0", 100);
-        Scooter sc1 = new Scooter(1, "1", 100, 034);
-        Scooter sc2 = new Scooter(2, "1", 100, 426);
-        Automobile au1 = new Automobile(1, "2", 100, 739);
-        Automobile au2 = new Automobile(2, "1", 100, 543);
-        Furgone fu1 = new Furgone(1, "2", 100, 222);
-        Furgone fu2 = new Furgone(2, "2", 100, 329);
+        Bicicletta bc1 = new Bicicletta(000,"02020");
+        Bicicletta bc2 = new Bicicletta(001,"02010");
+        Monopattino mp1 = new Monopattino(000, "0");
+        Monopattino mp2 = new Monopattino(001, "0");
+        Scooter sc1 = new Scooter(000,"10020",2587);
+        Scooter sc2 = new Scooter(001, "1", 5004);
+        Automobile au1 = new Automobile(000, "2", 1218);
+        Automobile au2 = new Automobile(001, "1", 1050);
+        Furgone fu1 = new Furgone(000, "2",2156 );
+        Furgone fu2 = new Furgone(001, "2", 984);
         pVeicoli.put("Bc01",bc1);
         pVeicoli.put("Bc02",bc2);
         pVeicoli.put("Mp01",mp1);
@@ -33,13 +33,13 @@ public class Database {
         pVeicoli.put("Fu01",fu1);
         pVeicoli.put("Fu02",fu2);
         DataNascita dti = new DataNascita(15,11,1991);
-        Utente io = new Utente("lucus","lrsc452",dti,true, patenteT.C1,false);
+        Utente io = new Utente("lucus","lrsc452",dti,new Patente(true, Patente.patenteT.C1),false);
         DataNascita dt1 = new DataNascita(20,2,2004);
-        Utente kikku = new Utente("kikketto","kkrhuf34",dt1,false,null,false);
+        Utente kikku = new Utente("kikketto","kkrhuf34",dt1,new Patente(false,null),false);
         DataNascita dt2 = new DataNascita(18,3,2000);
-        Utente deddu = new Utente("deddu","dert56",dt2,true, patenteT.A1,true);
+        Utente deddu = new Utente("deddu","dert56",dt2,new Patente(true, Patente.patenteT.A1),true);
         DataNascita dt3 = new DataNascita(20,4,1992);
-        Utente nenno = new Utente("nenno","nnnofr34",dt3,true, patenteT.B1,true);
+        Utente nenno = new Utente("nenno","nnnofr34",dt3,new Patente(true, Patente.patenteT.B1) ,true);
         utenti.put("Ut001",io);
         utenti.put("Ut002",kikku);
         utenti.put("Ut003",deddu);
@@ -52,8 +52,11 @@ public class Database {
         return regAff;
     }
 
-    public void setRegAff(String vei, String ut) {
-        String vei;
+    public void setRegAff(Veicolo veicolo,Utente utente) {
+
+        String vei = veicolo.getIdn()+veicolo.getId();
+        veicolo.stato.setUtaff(utente);
+        String ut = utente.getCf();
         regAff.put(vei, ut);
     }
 
@@ -70,6 +73,10 @@ public class Database {
 
     public void setpVeicoli(HashMap<String, Veicolo> pVeicoli) {
         this.pVeicoli = pVeicoli;
+    }
+
+    public HashMap<String, Veicolo> getpVeicoli() {
+        return pVeicoli;
     }
 }
 
